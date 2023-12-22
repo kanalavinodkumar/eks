@@ -3,16 +3,16 @@ kind: ClusterConfig
 
 metadata:
   name: eks-spot-cluster
-  region: ap-south-1
+  region: us-east-1
 
 managedNodeGroups:
   - name: spot
-    instanceType: m5.large
+    instanceType: t3.small
     # your K8 node can be anytime taken back by AWS
     spot: true
-    desiredCapacity: 3
+    desiredCapacity: 2
     # created to practice EBS static provisioning
     availabilityZones:
-      - ap-south-1a
+      - us-east-1
     ssh:
-      publicKeyName: kubernetes
+      publicKeyName: provisioners
