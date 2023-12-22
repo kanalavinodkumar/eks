@@ -15,4 +15,4 @@ managedNodeGroups:
     availabilityZones:
       - us-east-1
     ssh:
-      publicKeyName: provisioners
+      publicKeyName: provisioner
