@@ -7,12 +7,8 @@ metadata:
 
 managedNodeGroups:
   - name: spot
-    instanceType: t3.small
-    # your K8 node can be anytime taken back by AWS
+    instanceType: t2.small
     spot: true
     desiredCapacity: 2
-    # created to practice EBS static provisioning
-    availabilityZones:
-      - us-east-1
     ssh:
       publicKeyName: provisioner
