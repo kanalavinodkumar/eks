@@ -47,17 +47,17 @@ chmod +x /usr/local/bin/docker-compose
 VALIDATE $? "Moved docker-compose to local bin"
 
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
-chmod +x ./kubectl
+chmod +x ./kubectl &>>$LOG
 mv ./kubectl /usr/local/bin/
 VALIDATE $? "kubectl Installation"
 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" &>>$LOG
 unzip awscliv2.zip &>>$LOG
 ./aws/install &>>$LOG
 
 VALIDATE $? "AWS CLI v2 Installation"
 
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp &>>$LOG
 VALIDATE $? "Downloaded eksctl command"
 chmod +x /tmp/eksctl
 VALIDATE $?  "Added execute permissions to eksctl"
@@ -66,7 +66,7 @@ VALIDATE $? "moved eksctl to bin folder"
 
 VALIDATE $? "AWS CLI v2 Installation"
 
-git clone https://github.com/ahmetb/kubectx /opt/kubectx
+git clone https://github.com/ahmetb/kubectx /opt/kubectx &>>$LOG
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 VALIDATE $? "kubens Installation"
