@@ -58,17 +58,13 @@ unzip awscliv2.zip &>>$LOG
 VALIDATE $? "AWS CLI v2 Installation"
 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp &>>$LOG
-VALIDATE $? "Downloaded eksctl command"
 chmod +x /tmp/eksctl
-VALIDATE $?  "Added execute permissions to eksctl"
 mv /tmp/eksctl /usr/local/bin
-VALIDATE $? "moved eksctl to bin folder"
-
-VALIDATE $? "AWS CLI v2 Installation"
+VALIDATE $? "eksctl Installation"
 
 git clone https://github.com/ahmetb/kubectx /opt/kubectx &>>$LOG
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
-VALIDATE $? "kubens Installation"
+VALIDATE $? "kubectx Installation"
 
 echo  -e "$R You need logout and login to the server $N"
