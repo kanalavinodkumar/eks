@@ -65,6 +65,6 @@ VALIDATE $? "eksctl Installation"
 git clone https://github.com/ahmetb/kubectx /opt/kubectx &>>$LOG
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
-VALIDATE $? "kubectx Installation"
+VALIDATE $? "kubens Installation"
 
 echo  -e "$R You need logout and login to the server $N"
