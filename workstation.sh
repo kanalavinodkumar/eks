@@ -52,8 +52,8 @@ mv ./kubectl /usr/local/bin/
 VALIDATE $? "kubectl Installation"
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-./aws/install
+unzip awscliv2.zip &>>$LOG
+./aws/install &>>$LOG
 
 VALIDATE $? "AWS CLI v2 Installation"
 
