@@ -11,4 +11,4 @@ managedNodeGroups:
     spot: true
     desiredCapacity: 2
     ssh:
-      publicKeyName: provisioner
+      publicKeyName: devops
