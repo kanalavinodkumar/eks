@@ -10,5 +10,6 @@ managedNodeGroups:
     instanceType: t2.small
     spot: true
     desiredCapacity: 3
+    maxPodsPerNode: 30
     ssh:
       publicKeyName: devops
