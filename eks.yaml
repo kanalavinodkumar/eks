@@ -9,6 +9,6 @@ managedNodeGroups:
   - name: spot
     instanceType: t2.small
     spot: true
-    desiredCapacity: 2
+    desiredCapacity: 3
     ssh:
       publicKeyName: devops
