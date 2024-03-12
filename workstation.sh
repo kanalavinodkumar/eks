@@ -69,11 +69,3 @@ VALIDATE $? "kubens Installation"
 
 echo  -e "$R You need logout and login to the server $N"
 
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-kubectl get deployment metrics-server -n kube-system
-
-VALIDATE $? "Metric server Installation"
-
-curl -sS https://webinstall.dev/k9s | bash
-
-VALIDATE $? "K9s Installation"
